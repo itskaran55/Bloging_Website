@@ -1,0 +1,98 @@
+﻿@page
+@model BlogApp.Pages.Users.Tags.TechModel
+@{
+    ViewData["Title"] = "Tech - Blogs";
+    Layout = "_UserLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Blog</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesoeet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="/css/Blogs.css" />
+</head>
+<body>
+    <!-- blog section start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                @*     <div class="col-lg-8 col-sm-12">
+                <div class="about_img"><img src="/css/template/images/img-8.png"></div>
+                <div class="like_icon"><img src="/css/template/images/like-icon.png"></div>
+                <p class="post_text">Post By : 09/06/2019</p>
+                <h2 class="most_text">Most Awesome Blue Lake With Snow <br>River</h2>
+                <p class="lorem_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+                <div class="social_icon_main">
+                <div class="social_icon">
+                <ul>
+                <li><a href="#"><img src="/css/template/images/fb-icon.png"></a></li>
+                <li><a href="#"><img src="/css/template/images/twitter-icon.png"></a></li>
+                <li><a href="#"><img src="/css/template/images/instagram-icon.png"></a></li>
+                </ul>
+                </div>
+                <div class="read_bt"><a href="#">Read More</a></div>
+                </div>
+                </div> *@
+                <div class="col-lg-8 col-sm-12">
+                    <h1>Tech Blogs</h1>
+                    @if (Model.Blogs.Count > 0)
+                    {
+                        @foreach (var blog in Model.Blogs)
+                        {
+                            <div class="blogsData">
+                                <h3><strong>@blog.title</strong></h3>
+                                <p class="blogcontent">@blog.blogcontent</p>
+                                <p class="blogtags" style="color : white; text-decoration : underline;"><strong>Category : @blog.tags</strong></p>
+                                <p class="author"><small>Post By @blog.author on @blog.createdat</small></p>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>There are no Blogs about Tech yet. <a href="/Users/Create">Wanna make a Tech Blog ?</a>.</p>
+                    }
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="about_main">
+                        @*   <h1 class="follow_text">CONNECT & FOLLOW</h1>
+                        <div class="follow_icon">
+                        <ul>
+                        <li><a href="#"><img src="/css/template/images/fb-icon-1.png"></a></li>
+                        <li><a href="#"><img src="/css/template/images/twitter-icon-1.png"></a></li>
+                        <li><a href="#"><img src="/css/template/images/linkedin-icon-1.png"></a></li>
+                        <li><a href="#"><img src="/css/template/images/instagram-icon-1.png"></a></li>
+                        </ul>
+                        </div> *@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

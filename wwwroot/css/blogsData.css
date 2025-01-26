@@ -1,0 +1,43 @@
+﻿.container {
+    margin-top : 100px;
+}
+
+.blogsData {
+    background-color: #383b72;
+    padding: 20px 40px;
+    margin: 20px 0px;
+    margin-left: 190px;
+    position: relative;
+    width: 1200px;
+    transition : 0.5s ease-in;
+}
+
+    .blogsData:hover {
+        box-shadow: 10px 10px 30px black;
+        border-radius: 30px;
+    }
+
+h1 {
+    position : absolute;
+   left : 50%;
+   top : 10%;
+   color : white;
+   font-weight : bold;
+}
+
+.blogsData > .author {
+    color: greenyellow;
+    font-size: 1.1em;
+    position: absolute;
+    left: 75%;
+    top: 70%;
+}
+
+.blogsData > h3 {
+    color: white;
+    text-decoration: underline;
+}
+
+.blogsData > .blogcontent {
+    color: ghostwhite;
+}

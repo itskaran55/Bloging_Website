@@ -1,0 +1,29 @@
+﻿@page
+@model BlogApp.Pages.Users.CreateModel
+@{
+    ViewData["Title"] = "Create Blog";
+    Layout = "_UserLayout";
+}
+<html>
+<head>
+    <link rel="stylesheet" href="/css/template/css/blogCreate.css">
+</head>
+<body>
+    <div class="formContainer">
+        <h2>Create Blog</h2>
+
+        <form method="post">
+            <div class="title">
+                Title : <input type="text" name="title" />
+            </div>
+            <div class="content">
+                Content : <textarea name="content"></textarea>
+            </div>
+            <div class="tags">
+                Category : <input type="text" name="tag" style="width : 600px;"/>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

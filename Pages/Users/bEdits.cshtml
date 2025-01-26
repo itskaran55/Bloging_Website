@@ -1,0 +1,31 @@
+﻿@page "{id:int}"
+@model BlogApp.Pages.Users.bEditsModel
+@{
+    ViewData["Title"] = "Edit Blog";
+    Layout = "_UserLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/template/css/blogCreate.css">
+</head>
+<body>
+    <div class="formContainer">
+        <h2>Edit Blog</h2>
+
+        <form method="post">
+            <input type="hidden" asp-for="bData.blogid" />
+            <div class="title">
+                Title: <input type="text" asp-for="bData.title" />
+            </div>
+            <div class="content">
+                Content: <textarea asp-for="bData.blogcontent"></textarea>
+            </div>
+            <div class="tags">
+                Category: <input type="text" style="width : 600px" asp-for="bData.tags" />
+            </div>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>

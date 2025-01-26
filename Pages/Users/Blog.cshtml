@@ -1,0 +1,140 @@
+﻿@* @page
+@model BlogApp.Pages.Users.BlogModel
+@{
+    ViewData["Title"] = "Blogs";
+    Layout = "_UserLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Blog</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesoeet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="/css/Blogs.css"/>
+</head>
+<body>
+    <!-- blog section start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12">
+                    <h1>Latest Blogs</h1>
+                    @if (Model.Blogs.Count > 0)
+                    {
+                        @foreach (var blog in Model.Blogs)
+                        {
+                            <div class="blogsData">
+                                <h3><strong>@blog.title</strong></h3>
+                                <p class="blogcontent">@blog.blogcontent</p>
+                                <p class="blogtags" style="color : white; text-decoration : underline;"><strong>Category : @blog.tags</strong></p>
+                                <p class="author"><small>Post By @blog.author on @blog.createdat</small></p>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>There are no blogs yet. <a href="/Users/Create">Create a new blog</a>.</p>
+                    }
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="about_main">            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> *@
+
+                            @page
+@model BlogApp.Pages.Users.BlogModel
+@{
+    ViewData["Title"] = "Blogs";
+    Layout = "_UserLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="/css/Blogs.css" />
+</head>
+<body>
+    <!-- blog section start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12">
+                    <h1>Latest Blogs</h1>
+
+                    <!-- Search Form -->
+                    <form method="get">
+                        <div class="input-group mb-3" style="width : 50%; margin-left : 10px">
+                            <input type="text" class="form-control" placeholder="Search by category" name="searchCategory" value="@Model.SearchCategory">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </form>
+
+                    @if (Model.Blogs.Count > 0)
+                    {
+                        @foreach (var blog in Model.Blogs)
+                        {
+                            <div class="blogsData">
+                                <h3><strong>@blog.title</strong></h3>
+                                <p class="blogcontent">@blog.blogcontent</p>
+                                <p class="blogtags" style="color : white; text-decoration : underline;"><strong>Category : @blog.tags</strong></p>
+                                <p class="author"><small>Post By @blog.author on @blog.createdat</small></p>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p>No blogs found for the selected category.</p>
+                    }
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="about_main">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

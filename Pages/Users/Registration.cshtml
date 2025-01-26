@@ -1,0 +1,47 @@
+﻿@page
+@model BlogApp.Pages.Users.RegistrationModel
+@{
+    ViewData["Title"] = "Registration";
+    Layout = "_UserLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/template/css/Reg.css">
+
+</head>
+<body>
+    <div class='formContainer'>
+        <form method="post">
+            <h3>Registration</h3>
+            <div class='inputs'>
+                <div class='username'>
+                    <input type='text' name="username" placeholder='Enter Username' />
+                </div>
+                <div class='email'>
+                    <input type='email' name="email" placeholder='Enter Email' />
+                </div>
+                <div class='password'>
+                    <input type='text' name="password" placeholder='Enter Password' />
+                </div>
+                <div class='cpassword'>
+                    <input type='text' name="cpassword" placeholder='Enter Confirm Password' />
+                </div>
+            </div>
+            <div class='labels'>
+                <div class='loginText'>
+                    <spam>Already have an Account ?</spam>
+                </div>
+                <div class='login'>
+                    <a href="/Users/Login" class=' text-light text-decoration-none'>Login</a>
+                </div>
+            </div>
+            <div class='btn'>
+                <button>Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

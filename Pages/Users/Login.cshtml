@@ -1,0 +1,47 @@
+﻿@page
+@model BlogApp.Pages.Users.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_UserLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/template/css/reg.css">
+</head>
+<body>
+    <div class='formContainer'>
+        <form method="post">
+            <h3>Login</h3>
+            <div class='inputs'>
+                <div class='username'>
+                    <input type='text' placeholder='Enter Username' name="username" />
+                </div>
+                <div class='password'>
+                    <input type='password' placeholder='Enter Password' name="password" />
+                </div>
+            </div>
+            <div class='labels'>
+                <div class='loginText'>
+                    <spam>Don't have an Account ?</spam>
+                </div>
+                <div class='login'>
+                    <a href="/Users/Registration" class=' text-light text-decoration-none'>Registration</a>
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div class='btn'>
+                <button>Login</button>
+            </div>
+        </form>
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="alert alert-danger">@Model.ErrorMessage</div>
+        }
+    </div>
+</body>
+</html>
